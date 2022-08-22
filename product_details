@@ -1,3 +1,4 @@
+Category: Spring, Summer, Autumn, Winter, Tea Sets
 Tea Type:
 Origin:
 Aroma:
@@ -8,5 +9,6 @@ Package:
 Size:
 is_available:
 is_new:
-Category:
 Price:
+Image:
+Color: Black, Red, Green, White, Yellow
