@@ -1,5 +1,7 @@
 from django.db import models
+from datetime import datetime
 from category.models import Category
+from django.core.validators import MinValueValidator
 
 # Create your models here.
 
@@ -14,14 +16,13 @@ class Product(models.Model):
     tea_nature  = models.CharField(max_length=100, blank=True)
     is_available = models.BooleanField(default=True)
     is_new = models.BooleanField(default=False)
-    properties = models.TextField(max_length=500, blank=True)
-    package = models.TextField(max_length=100, blank=True)
-    size = models.CharField(max_length=50, blank=True)
+    properties = models.TextField(max_length=300, blank=True)
+    weight = models.IntegerField()
     original_price = models.IntegerField()
     discounted_price = models.IntegerField()
-    image = models.ImageField(upload_to="photos/products")
-    created_date = models.DateTimeField(auto_now_add=True)
-    modified_date = models.DateTimeField(auto_now=True)
+    photo = models.ImageField(upload_to="photos/products/%Y/%m/%d")
+    created_date = models.DateTimeField(default=datetime.now)
+    modified_date = models.DateTimeField(default=datetime.now)
     stars = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 

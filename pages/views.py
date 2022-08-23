@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from shop.models import Product
 
 # Create your views here.
 
 def index(request):
-    return render(request, "pages/index.html")
+    products = Product.objects.all().filter(is_available=True)
+    
+    context = {
+        'products': products,
+    }
+    return render(request, "pages/index.html", context)
 
 
 def about(request):
