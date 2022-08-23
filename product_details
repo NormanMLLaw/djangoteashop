@@ -1,6 +1,6 @@
-Category: Spring, Summer, Autumn, Winter, Tea Sets
+Category: 
 Tea Type:
-Origin:
+Color: 
 Aroma:
 Taste:
 Tea Nature:
@@ -11,4 +11,7 @@ is_available:
 is_new:
 Price:
 Image:
-Color: Black, Red, Green, White, Yellow
+
+Tea Accessories
+
+A tea set is a set of cups, saucers, and plates, with a milk jug, sugar bowl, and teapot.
