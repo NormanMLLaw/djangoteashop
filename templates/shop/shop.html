@@ -57,17 +57,17 @@
             </div>
             <div class="grid-list-product-wrapper">
               <div class="product-grid product-view pb-20">
-              {% if products %} {% for product in products %}
                 <div class="row">
+                  {% if products %} {% for product in products %}
                   <div
                     class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
                       <div class="product-img">
                         <a href="product-details.html">
-                          <img alt="" src="{% static 'img/product/product-1.jpg' %}" />
+                          <img alt="" src="{{ product.photo.url }}" />
                         </a>
-                        <span>-30%</span>
+                        <span>-{{ product.discount_rate }}%</span>
                         <div class="product-action">
                           <a class="action-wishlist" href="#" title="Wishlist">
                             <i class="ion-android-favorite-outline"></i>
@@ -91,7 +91,7 @@
                           <div class="product-title">
                             <h4>
                               <a href="product-details.html"
-                                >Nature Close Tea</a
+                                >{{ product.tea_nature }}</a
                               >
                             </h4>
                           </div>
@@ -102,8 +102,8 @@
                           </div>
                         </div>
                         <div class="product-price-wrapper">
-                          <span>$100.00 -</span>
-                          <span class="product-price-old">$120.00 </span>
+                          <span>${{ product.discounted_price }} -</span>
+                          <span class="product-price-old">${{ product.original_price }} </span>
                         </div>
                       </div>
                       <div class="product-list-details">
@@ -140,7 +140,11 @@
                       </div>
                     </div>
                   </div>
-                  <div
+
+                  
+
+
+                  <!-- <div
                     class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -179,6 +183,7 @@
                             </h4>
                           </div>
                         </div>
+
                         <div class="product-price-wrapper">
                           <span>$100.00 -</span>
                           <span class="product-price-old">$120.00 </span>
@@ -217,8 +222,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -296,8 +301,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -374,8 +379,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -453,8 +458,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -531,8 +536,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -610,8 +615,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -687,8 +692,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -766,8 +771,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -844,8 +849,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -925,8 +930,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
+                  </div> -->
+                  <!-- <div
                     class="product-width pro-list-none col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
                     <div class="product-wrapper">
@@ -1005,7 +1010,8 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>-->
+                  {% endfor %} {% endif %}
                 </div>
               </div>
               <div class="pagination-total-pages">
@@ -1040,57 +1046,9 @@
                 <h4 class="shop-sidebar-title">Shop By Categories</h4>
                 <div class="shop-catigory">
                   <ul id="faq">
-                    <li>
-                      <a
-                        data-bs-toggle="collapse"
-                        data-parent="#faq"
-                        href="#shop-catigory-1"
-                        >Morning Tea <i class="ion-ios-arrow-down"></i
-                      ></a>
-                      <ul
-                        id="shop-catigory-1"
-                        class="panel-collapse collapse show"
-                      >
-                        <li><a href="#">Green</a></li>
-                        <li><a href="#">Herbal</a></li>
-                        <li><a href="#">Loose </a></li>
-                        <li><a href="#">Mate</a></li>
-                        <li><a href="#">Organic</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a
-                        data-bs-toggle="collapse"
-                        data-parent="#faq"
-                        href="#shop-catigory-2"
-                        >Tea Trends<i class="ion-ios-arrow-down"></i
-                      ></a>
-                      <ul id="shop-catigory-2" class="panel-collapse collapse">
-                        <li><a href="#">Pu'Erh</a></li>
-                        <li><a href="#">Black</a></li>
-                        <li><a href="#">White</a></li>
-                        <li><a href="#">Yellow Tea</a></li>
-                        <li><a href="#">Puer Tea</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a
-                        data-bs-toggle="collapse"
-                        data-parent="#faq"
-                        href="#shop-catigory-3"
-                        >Most Tea Map <i class="ion-ios-arrow-down"></i
-                      ></a>
-                      <ul id="shop-catigory-3" class="panel-collapse collapse">
-                        <li><a href="#">Green Tea</a></li>
-                        <li><a href="#">Oolong Tea</a></li>
-                        <li><a href="#">Black Tea</a></li>
-                        <li><a href="#">Pu'erh Tea </a></li>
-                        <li><a href="#">Dark Tea</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Herbal Tea</a></li>
-                    <li><a href="#">Rooibos Tea</a></li>
-                    <li><a href="#">Organic Tea</a></li>
+                    {% for category in links %}
+                    <li><a href="#">{{ category.category_name}}</a></li>
+                    {% endfor %}
                   </ul>
                 </div>
               </div>

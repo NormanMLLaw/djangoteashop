@@ -20,6 +20,7 @@ class Product(models.Model):
     weight = models.IntegerField()
     original_price = models.IntegerField()
     discounted_price = models.IntegerField()
+    discount_rate = models.IntegerField(blank=True)
     photo = models.ImageField(upload_to="photos/products/%Y/%m/%d")
     created_date = models.DateTimeField(default=datetime.now)
     modified_date = models.DateTimeField(default=datetime.now)
