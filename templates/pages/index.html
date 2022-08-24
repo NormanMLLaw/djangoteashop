@@ -2,7 +2,7 @@
 <!-- load static -->
 {% load static %}
 <!-- block content -->
-{% block content %}
+{% block content %} {% load mathfilters %}
 
 <!-- Slider Start -->
 <div class="slider-area">
@@ -55,7 +55,9 @@
           <a href="product-details.html">
             <img alt="" src="{{ product.photo.url }}" />
           </a>
-          <span>-20%</span>
+          <span
+            >-{{ product.original_price|sub:product.discounted_price }}</span
+          >
           <div class="product-action">
             <a class="action-wishlist" href="#" title="Wishlist">
               <i class="ion-android-favorite-outline"></i>
