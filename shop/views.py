@@ -20,3 +20,8 @@ def shop(request, category_slug=None):
         'products': products,
     }
     return render(request, 'shop/shop.html', context)
+
+
+def product_detail(request, category_slug, product_slug):
+    return render(request, 'shop/product_detail.html')
+    
