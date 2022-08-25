@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from category.models import Category
 from django.core.validators import MinValueValidator
+from django.urls import reverse 
 
 # Create your models here.
 
@@ -26,8 +27,11 @@ class Product(models.Model):
     modified_date = models.DateTimeField(default=datetime.now)
     stars = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    
+    def get_url(self):
+        return reverse('product_detail', args=[self.category.slug, self.slug])
 
-def __str__(self):
-    return self.tea_name
+    def __str__(self):
+        return self.tea_name
 
 

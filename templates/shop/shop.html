@@ -63,7 +63,7 @@
                   >
                     <div class="product-wrapper">
                       <div class="product-img">
-                        <a href="product-detail.html">
+                        <a href="{{ product.get_url }}">
                           <img alt="" src="{{ product.photo.url }}" />
                         </a>
                         <span>-{{ product.discount_rate }}%</span>
@@ -89,14 +89,14 @@
                         <div class="product-hover-style">
                           <div class="product-title">
                             <h4>
-                              <a href="product-detail.html"
+                              <a href="{{ product.get_url }}"
                                 >{{ product.tea_name}}</a
                               >
                             </h4>
                           </div>
                           <div class="cart-hover">
                             <h4>
-                              <a href="product-detail.html">+ Add to cart</a>
+                              <a href="{{ product.get_url }}">+ Add to cart</a>
                             </h4>
                           </div>
                         </div>
@@ -107,7 +107,7 @@
                       </div>
                       <div class="product-list-details">
                         <h4>
-                          <a href="product-detail.html">{{ product.tea_name}}</a>
+                          <a href="{{ product.get_url }}">{{ product.tea_name}}</a>
                         </h4>
                         <div class="product-price-wrapper">
                           <span>${{ product.discounted_price }}</span>
