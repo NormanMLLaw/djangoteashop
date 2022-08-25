@@ -24,7 +24,7 @@
         <div class="product-details-img">
           <img
             class="zoompro"
-            src="assets/img/product-details/product-detalis-l1.jpg"
+            src="{{ single_product.photo.url }}"
             data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg"
             alt="zoom"
           />
@@ -84,12 +84,12 @@
               />
             </a>
           </div>
-          <span>-29%</span>
+          <span>-{{single_product.discount_rate}}%</span>
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
         <div class="product-details-content">
-          <h4>Nature Close Tea</h4>
+          <h4>{{ single_product.tea_name}}</h4>
           <div class="rating-review">
             <div class="pro-dec-rating">
               <i class="ion-android-star-outline theme-star"></i>
@@ -105,9 +105,25 @@
               </ul>
             </div>
           </div>
-          <span>$260.00</span>
+          <p>
+            Tea type:&#x2004;{{ single_product.tea_type }}<br />
+            Origin:&#x2003;&#x2009;&#x2006;{{ single_product.origin }}<br />
+            Color:&#x2003;&#x2004;&#x2006;&#x2006;&#x2006;{{single_product.color}}<br />
+            Aroma:&#x2003;&#x2006;&#x2009;{{ single_product.aroma}}<br />
+            Taste:&#x2003;&#x2004;&#x2006;&#x2006;&#x2009;{{single_product.taste}}<br />
+            Nature:&#x2003;&#x2009;{{ single_product.tea_nature}}<br />
+            Weight:&#x2003;&#x2009;{{ single_product.weight}} g<br />
+            Price:&#x2003;&#x2003;&#x2009;<span
+              >${{ single_product.discounted_price }}</span
+            >
+          </p>
+
           <div class="in-stock">
+            {% if single_product.is_available %}
             <p>Available: <span>In stock</span></p>
+            {% else %}
+            <p class="danger">Our of stock, will be availabled soon.</p>
+            {% endif %}
           </div>
           <p>
             Nam liber tempor cum soluta nobis eleifend option congue nihil

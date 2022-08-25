@@ -63,7 +63,7 @@
                   >
                     <div class="product-wrapper">
                       <div class="product-img">
-                        <a href="product-details.html">
+                        <a href="product-detail.html">
                           <img alt="" src="{{ product.photo.url }}" />
                         </a>
                         <span>-{{ product.discount_rate }}%</span>
@@ -89,14 +89,14 @@
                         <div class="product-hover-style">
                           <div class="product-title">
                             <h4>
-                              <a href="product-details.html"
-                                >{{ product.tea_nature }}</a
+                              <a href="product-detail.html"
+                                >{{ product.tea_name}}</a
                               >
                             </h4>
                           </div>
                           <div class="cart-hover">
                             <h4>
-                              <a href="product-details.html">+ Add to cart</a>
+                              <a href="product-detail.html">+ Add to cart</a>
                             </h4>
                           </div>
                         </div>
@@ -107,11 +107,11 @@
                       </div>
                       <div class="product-list-details">
                         <h4>
-                          <a href="product-details.html">Nature Close Tea</a>
+                          <a href="product-detail.html">{{ product.tea_name}}</a>
                         </h4>
                         <div class="product-price-wrapper">
-                          <span>$100.00</span>
-                          <span class="product-price-old">$120.00 </span>
+                          <span>${{ product.discounted_price }}</span>
+                          <span class="product-price-old">${{ product.original_price }}</span>
                         </div>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipic it, sed
