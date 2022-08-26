@@ -22,10 +22,15 @@ class Product(models.Model):
     original_price = models.IntegerField()
     discounted_price = models.IntegerField()
     discount_rate = models.IntegerField(blank=True)
-    photo = models.ImageField(upload_to="photos/products/%Y/%m/%d")
+    photo_main = models.ImageField(upload_to='photos/%Y/%m/%d')
+    photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
+    photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
+    photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
+    photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
     created_date = models.DateTimeField(default=datetime.now)
     modified_date = models.DateTimeField(default=datetime.now)
     stars = models.IntegerField()
+    store = models.IntegerField() 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     
     def get_url(self):
