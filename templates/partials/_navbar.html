@@ -216,122 +216,16 @@
           <nav id="mobile-menu-active">
             <ul class="menu-overflow">
               <li>
-                <a href="#">HOME</a>
-                <ul>
+                <a href="{% url 'index' %}">HOME</a>
+                <!-- <ul>
                   <li><a href="{% url 'index' %}">home version 1</a></li>
                   <li><a href="index-2.html">home version 2</a></li>
-                </ul>
+                </ul> -->
               </li>
-              <li>
-                <a href="#">pages</a>
-                <ul>
-                  <li><a href="{% url 'about' %}">about us </a></li>
-                  <li><a href="shop.html">shop Grid</a></li>
-                  <li><a href="shop-list.html">shop list</a></li>
-                  <li>
-                    <a href="product-details.html">product details</a>
-                  </li>
-                  <li><a href="cart-page.html">cart page</a></li>
-                  <li><a href="checkout.html">checkout</a></li>
-                  <li><a href="wishlist.html">wishlist</a></li>
-                  <li><a href="my-account.html">my account</a></li>
-                  <li>
-                    <a href="login-register.html">login / register</a>
-                  </li>
-                  <li><a href="contact.html">contact</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="shop.html"> Shop </a>
-                <ul>
-                  <li>
-                    <a href="#">Categories 01</a>
-                    <ul>
-                      <li><a href="shop.html">Aconite</a></li>
-                      <li><a href="shop.html">Ageratum</a></li>
-                      <li><a href="shop.html">Allium</a></li>
-                      <li><a href="shop.html">Anemone</a></li>
-                      <li><a href="shop.html">Angelica</a></li>
-                      <li><a href="shop.html">Angelonia</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Categories 02</a>
-                    <ul>
-                      <li><a href="shop.html">Balsam</a></li>
-                      <li><a href="shop.html">Baneberry</a></li>
-                      <li><a href="shop.html">Bee Balm</a></li>
-                      <li><a href="shop.html">Begonia</a></li>
-                      <li><a href="shop.html">Bellflower</a></li>
-                      <li><a href="shop.html">Bergenia</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Categories 03</a>
-                    <ul>
-                      <li><a href="shop.html">Caladium</a></li>
-                      <li><a href="shop.html">Calendula</a></li>
-                      <li><a href="shop.html">Carnation</a></li>
-                      <li><a href="shop.html">Catmint</a></li>
-                      <li><a href="shop.html">Celosia</a></li>
-                      <li><a href="shop.html">Chives</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Categories 04</a>
-                    <ul>
-                      <li><a href="shop.html">Daffodil</a></li>
-                      <li><a href="shop.html">Dahlia</a></li>
-                      <li><a href="shop.html">Daisy</a></li>
-                      <li><a href="shop.html">Diascia</a></li>
-                      <li><a href="shop.html">Dusty Miller</a></li>
-                      <li><a href="shop.html">Dame’s Rocket</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">BLOG</a>
-                <ul>
-                  <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                  <li>
-                    <a href="#">Blog Standard</a>
-                    <ul>
-                      <li>
-                        <a href="blog-left-sidebar.html">left sidebar</a>
-                      </li>
-                      <li>
-                        <a href="blog-right-sidebar.html">right sidebar</a>
-                      </li>
-                      <li><a href="blog-no-sidebar.html">no sidebar</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Post Types</a>
-                    <ul>
-                      <li>
-                        <a href="blog-details-standerd.html">Standard post</a>
-                      </li>
-                      <li>
-                        <a href="blog-details-audio.html">audio post</a>
-                      </li>
-                      <li>
-                        <a href="blog-details-video.html">video post</a>
-                      </li>
-                      <li>
-                        <a href="blog-details-gallery.html">gallery post</a>
-                      </li>
-                      <li>
-                        <a href="blog-details-link.html">link post</a>
-                      </li>
-                      <li>
-                        <a href="blog-details-quote.html">quote post</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="contact.html"> Contact us </a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'shop' %}">Shop</a></li>
+              <li><a href="{% url 'contact' %}"> Contact us </a></li>
+              <li><a href="{% url 'login_register' %}">login / register</a></li>
             </ul>
           </nav>
         </div>
