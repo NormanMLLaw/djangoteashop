@@ -9,7 +9,7 @@
     <div class="breadcrumb-content text-center">
       <h3>CART PAGE</h3>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="{% url 'index' %}">Home</a></li>
         <li class="active">Cart page</li>
       </ul>
     </div>
@@ -36,6 +36,7 @@
                 </tr>
               </thead>
               <tbody>
+                {% for cart_item in cart_items %}
                 <tr>
                   <td class="product-thumbnail">
                     <a href="#"
@@ -64,6 +65,7 @@
                     <a href="#"><i class="fa fa-times"></i></a>
                   </td>
                 </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
