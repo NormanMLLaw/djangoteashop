@@ -24,38 +24,45 @@
         <div class="product-details-img">
           <img
             class="zoompro"
-            src="{{ single_product.photo_main.url }}"
-            data-zoom-image="{{ single_product.photo_main.url }}"
+            src="{{ single_product.photo_1.url }}"
+            data-zoom-image="{{ single_product.photo_1_z.url }}"
             alt="zoom"
           />
           <div id="gallery" class="mt-20 product-dec-slider owl-carousel">
             {% if single_product.photo_1 %}
             <a
               data-image="{{ single_product.photo_1.url }}"
-              data-zoom-image="{{ single_product.photo_1.url }}"
+              data-zoom-image="{{ single_product.photo_1_z.url }}"
             >
-              <img src="{{ single_product.photo_1.url }}" alt="" />
+              <img src="{{ single_product.photo_1_t.url }}" alt="" />
             </a>
             {% endif %} {% if single_product.photo_2 %}
             <a
               data-image="{{ single_product.photo_2.url }}"
-              data-zoom-image="{{ single_product.photo_2.url }}"
+              data-zoom-image="{{ single_product.photo_2_z.url }}"
             >
-              <img src="{{ single_product.photo_2.url }}" alt="" />
+              <img src="{{ single_product.photo_2_t.url }}" alt="" />
             </a>
             {% endif %} {% if single_product.photo_3 %}
             <a
               data-image="{{ single_product.photo_3.url }}"
-              data-zoom-image="{{ single_product.photo_3.url }}"
+              data-zoom-image="{{ single_product.photo_3_z.url }}"
             >
-              <img src="{{ single_product.photo_3.url }}" alt="" />
+              <img src="{{ single_product.photo_3_t.url }}" alt="" />
             </a>
             {% endif %} {% if single_product.photo_4 %}
             <a
               data-image="{{ single_product.photo_4.url }}"
-              data-zoom-image="{{ single_product.photo_4.url }}"
+              data-zoom-image="{{ single_product.photo_4_z.url }}"
             >
-              <img src="{{ single_product.photo_4.url }}" alt="" />
+              <img src="{{ single_product.photo_4_t.url }}" alt="" />
+            </a>
+            {% endif %} {% if single_product.photo_2 %}
+            <a
+              data-image="{{ single_product.photo_2.url }}"
+              data-zoom-image="{{ single_product.photo_2_z.url }}"
+            >
+              <img src="{{ single_product.photo_2_t.url }}" alt="" />
             </a>
             {% endif %}
           </div>
