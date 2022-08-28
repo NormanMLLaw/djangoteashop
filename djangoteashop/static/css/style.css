@@ -2561,7 +2561,7 @@ textarea:focus {
     margin-bottom: 0.375rem;
     opacity: 1;
 }
-.product-quantity button {
+/* .product-quantity  button, a.button {
     background: #333 none repeat scroll 0 0;
     border: medium none;
     border-radius: 3px;
@@ -2576,19 +2576,50 @@ textarea:focus {
     padding: 0 20px;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
+} */
+
+
+.input-group-prepend .input-group-append, a.button {
+    background: #454545 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    height: 40px;
+    letter-spacing: 0.025em;
+    line-height: 40px;
+    margin-top: 3px;
+    margin-left: 9px;
+    margin-right: 9px;
+    padding: 0 7px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
 }
+
+
+.input-group-prepend .input-group-append, a.button:hover {
+    background: #519f10 none repeat scroll 0 0;
+}
+
+
 .modal-pro-content .product-quantity {
     display: block;
     margin: 0 0 16px;
     overflow: hidden;
 }
 .product-quantity button:hover {
-    background: #ff5313 none repeat scroll 0 0;
+    background: #519f10 none repeat scroll 0 0;
 }
 .quickview-color-wrap {
     margin: 29px 0 0;
 }
-.modal-pro-content .product-quantity .cart-plus-minus {
+/* .modal-pro-content .product-quantity .cart-plus-minus {
+    display: inline-block;
+    float: left;
+} */
+.modal-pro-content .input-group .input-spinner {
     display: inline-block;
     float: left;
 }
@@ -5517,6 +5548,8 @@ h4.section-title-about::before {
 section.wn_contact_area {
   padding-bottom: 60px;
 }
+
+
 }
 
 

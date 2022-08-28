@@ -127,39 +127,40 @@
               </li>
             </ul>
           </div> -->
-          <div class="quality-add-to-cart">
-            {% comment %}
-            <div class="quality">
-              <label>Qty:</label>
-              <input
-                class="cart-plus-minus-box"
-                type="text"
-                name="qtybutton"
-                value="{{ cart_item.quantity }}"
-              />
-            </div>
-            {% endcomment %}
 
-            <div class="shop-list-cart-wishlist mx-10">
-              <a
-                type="button"
-                title="Add To Cart"
-                href="{% url 'add_cart' single_product.id %}"
-                style="font-family: 'Work Sans', sans-serif; font-weight: 600"
-                >&nbsp;&nbsp;Add&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i
-                  class="ion-android-cart"
-                ></i
-                >&nbsp;&nbsp;</a
-              >
-              {% comment %}
-              <a title="Wishlist" href="#">
-                <i class="ion-android-favorite-outline"></i>
-              </a>
-              {% endcomment %}
-            </div>
-          </div>
+          <!-- <div class="product-quantity mt-3">
+            <div class="cart-plus-minus">
+              <div class="quality-add-to-cart">
+                <div class="quality">
+                  <label>Qty:</label>
+                  <input
+                    class="cart-plus-minus-box"
+                    type="text"
+                    name="qtybutton"
+                    value="{{ cart_item.quantity }}"
+                  />
+                </div> -->  
 
-          <!-- <div class="pro-dec-categories">
+                <div class="product-quantity mt-3">
+                  <div class="cart-plus-minus">
+                    <div class="shop-list-cart-wishlist mx-10">
+                      <a
+                        type="button"
+                        title="Add To Cart"
+                        href="{% url 'add_cart' single_product.id %}"
+                        style="
+                          font-family: 'Work Sans', sans-serif;
+                          font-weight: 600;
+                        "
+                        >&nbsp;&nbsp;Add&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i
+                          class="ion-android-cart"
+                        ></i
+                        >&nbsp;&nbsp;</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- <div class="pro-dec-categories">
             <ul>
               <li class="categories-title">Categories:</li>
               <li><a href="#">Green,</a></li>
@@ -176,38 +177,42 @@
               <li><a href="#"> Pu'erh,</a></li>
               <li><a href="#"> Dark,</a></li>
               <li><a href="#"> Special </a></li>
-            </ul>
-          </div> -->
-          <div class="pro-dec-social">
-            <ul>
-              <li>
-                <a class="tweet" href="#"
-                  ><i class="ion-social-twitter"></i> Tweet</a
-                >
-              </li>
-              <li>
-                <a class="share" href="#"
-                  ><i class="ion-social-facebook"></i> Share</a
-                >
-              </li>
-              <li>
-                <a class="google" href="#"
-                  ><i class="ion-social-googleplus-outline"></i> Google+</a
-                >
-              </li>
-              <li>
-                <a class="pinterest" href="#"
-                  ><i class="ion-social-pinterest"></i> Pinterest</a
-                >
-              </li>
-            </ul>
+            </ul>-->
+                </div>
+                <div class="pro-dec-social">
+                  <ul>
+                    <li>
+                      <a class="tweet" href="#"
+                        ><i class="ion-social-twitter"></i> Tweet</a
+                      >
+                    </li>
+                    <li>
+                      <a class="share" href="#"
+                        ><i class="ion-social-facebook"></i> Share</a
+                      >
+                    </li>
+                    <li>
+                      <a class="google" href="#"
+                        ><i class="ion-social-googleplus-outline"></i>
+                        Google+</a
+                      >
+                    </li>
+                    <li>
+                      <a class="pinterest" href="#"
+                        ><i class="ion-social-pinterest"></i> Pinterest</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Product Deatils Area End -->
+
+      {% endblock %}
     </div>
   </div>
 </div>
-
-<!-- Product Deatils Area End -->
-
-{% endblock %}

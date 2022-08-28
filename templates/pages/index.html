@@ -59,15 +59,17 @@
           <span>-{{ product.discount_rate }}%</span>
           {% else %} {% endif %}
           <div class="product-action">
+            {% comment %}
             <a class="action-wishlist" href="#" title="Wishlist">
               <i class="ion-android-favorite-outline"></i>
             </a>
             <a class="action-cart" href="#" title="Add To Cart">
               <i class="ion-ios-shuffle-strong"></i>
             </a>
+            {% endcomment %}
             <a
               class="action-compare"
-              href="#"
+              href="{{ product.get_url }}"
               data-bs-target="#exampleModal"
               data-bs-toggle="modal"
               title="Quick View"
@@ -84,7 +86,7 @@
               </h4>
             </div>
             <div class="cart-hover">
-              <h4><a href="product-details.html">+ Add to cart</a></h4>
+              <h4><a href="{{ product.get_url }}">+ Add to cart</a></h4>
             </div>
           </div>
           <div class="product-price-wrapper">
@@ -96,172 +98,6 @@
           {% endfor %} {% endif %}
         </div>
       </div>
-      <!--
-      <div class="product-wrapper">
-        <div class="product-img">
-          <a href="product-details.html">
-            <img alt="" src="{% static 'img/product/product-2.jpg' %}" />
-          </a>
-          <div class="product-action">
-            <a class="action-wishlist" href="#" title="Wishlist">
-              <i class="ion-android-favorite-outline"></i>
-            </a>
-            <a class="action-cart" href="#" title="Add To Cart">
-              <i class="ion-ios-shuffle-strong"></i>
-            </a>
-            <a
-              class="action-compare"
-              href="#"
-              data-bs-target="#exampleModal"
-              data-bs-toggle="modal"
-              title="Quick View"
-            >
-              <i class="ion-ios-search-strong"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-content text-left">
-          <div class="product-hover-style">
-            <div class="product-title">
-              <h4>
-                <a href="product-details.html">Pink wave Cup</a>
-              </h4>
-            </div>
-            <div class="cart-hover">
-              <h4><a href="product-details.html">+ Add to cart</a></h4>
-            </div>
-          </div>
-          <div class="product-price-wrapper">
-            <span>$100.00 -</span>
-            <span class="product-price-old">$120.00 </span>
-          </div>
-        </div>
-      </div>
-      <div class="product-wrapper">
-        <div class="product-img">
-          <a href="product-details.html">
-            <img alt="" src="{% static 'img/product/product-3.jpg' %}" />
-          </a>
-          <span>-50%</span>
-          <div class="product-action">
-            <a class="action-wishlist" href="#" title="Wishlist">
-              <i class="ion-android-favorite-outline"></i>
-            </a>
-            <a class="action-cart" href="#" title="Add To Cart">
-              <i class="ion-ios-shuffle-strong"></i>
-            </a>
-            <a
-              class="action-compare"
-              href="#"
-              data-bs-target="#exampleModal"
-              data-bs-toggle="modal"
-              title="Quick View"
-            >
-              <i class="ion-ios-search-strong"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-content text-left">
-          <div class="product-hover-style">
-            <div class="product-title">
-              <h4>
-                <a href="product-details.html">Tea and Chai</a>
-              </h4>
-            </div>
-            <div class="cart-hover">
-              <h4><a href="product-details.html">+ Add to cart</a></h4>
-            </div>
-          </div>
-          <div class="product-price-wrapper">
-            <span>$100.00 -</span>
-            <span class="product-price-old">$120.00 </span>
-          </div>
-        </div>
-      </div>
-      <div class="product-wrapper">
-        <div class="product-img">
-          <a href="product-details.html">
-            <img alt="" src="{% static 'img/product/product-4.jpg' %}" />
-          </a>
-          <div class="product-action">
-            <a class="action-wishlist" href="#" title="Wishlist">
-              <i class="ion-android-favorite-outline"></i>
-            </a>
-            <a class="action-cart" href="#" title="Add To Cart">
-              <i class="ion-ios-shuffle-strong"></i>
-            </a>
-            <a
-              class="action-compare"
-              href="#"
-              data-bs-target="#exampleModal"
-              data-bs-toggle="modal"
-              title="Quick View"
-            >
-              <i class="ion-ios-search-strong"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-content text-left">
-          <div class="product-hover-style">
-            <div class="product-title">
-              <h4>
-                <a href="product-details.html">Pearly Everlasting</a>
-              </h4>
-            </div>
-            <div class="cart-hover">
-              <h4><a href="product-details.html">+ Add to cart</a></h4>
-            </div>
-          </div>
-          <div class="product-price-wrapper">
-            <span>$100.00 -</span>
-            <span class="product-price-old">$120.00 </span>
-          </div>
-        </div>
-      </div>
-      <div class="product-wrapper">
-        <div class="product-img">
-          <a href="product-details.html">
-            <img alt="" src="{% static 'img/product/product-5.jpg' %}" />
-          </a>
-          <span>-30%</span>
-          <div class="product-action">
-            <a class="action-wishlist" href="#" title="Wishlist">
-              <i class="ion-android-favorite-outline"></i>
-            </a>
-            <a class="action-cart" href="#" title="Add To Cart">
-              <i class="ion-ios-shuffle-strong"></i>
-            </a>
-            <a
-              class="action-compare"
-              href="#"
-              data-bs-target="#exampleModal"
-              data-bs-toggle="modal"
-              title="Quick View"
-            >
-              <i class="ion-ios-search-strong"></i>
-            </a>
-          </div>
-        </div>
-        <div class="product-content text-left">
-          <div class="product-hover-style">
-            <div class="product-title">
-              <h4>
-                <a href="product-details.html">Que herbal Tea</a>
-              </h4>
-            </div>
-            <div class="cart-hover">
-              <h4><a href="product-details.html">+ Add to cart</a></h4>
-            </div>
-          </div>
-          <div class="product-price-wrapper">
-            <span>$100.00 -</span>
-            <span class="product-price-old">$120.00 </span>
-          </div>
-        </div>
-      </div>
-     
-    </div>
-  </div> -->
     </div>
     <!-- Product Area End -->
     <!-- Banner Start -->
@@ -827,6 +663,7 @@
     <!-- Testimonial Area End -->
 
     <!-- Modal -->
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -842,114 +679,72 @@
           </div>
           <div class="modal-body">
             <div class="row">
+              {% if products %} {% for product in products %}
               <div class="col-md-5 col-sm-5 col-xs-12">
                 <!-- Thumbnail Large Image start -->
                 <div class="tab-content">
                   <div id="pro-1" class="tab-pane fade show active">
-                    <img
-                      src="{% static 'img/product-details/product-detalis-l1.jpg' %}"
-                      alt=""
-                    />
-                  </div>
-                  <div id="pro-2" class="tab-pane fade">
-                    <img
-                      src="{% static 'img/product-details/product-detalis-l2.jpg' %}"
-                      alt=""
-                    />
-                  </div>
-                  <div id="pro-3" class="tab-pane fade">
-                    <img
-                      src="{% static 'img/product-details/product-detalis-l3.jpg' %}"
-                      alt=""
-                    />
-                  </div>
-                  <div id="pro-4" class="tab-pane fade">
-                    <img
-                      src="{% static 'img/product-details/product-detalis-l4.jpg' %}"
-                      alt=""
-                    />
+                    <img src="{{ product.photo_1.url }}" alt="" />
                   </div>
                 </div>
                 <!-- Thumbnail Large Image End -->
                 <!-- Thumbnail Image End -->
-                <div class="product-thumbnail">
-                  <div
-                    class="thumb-menu owl-carousel nav nav-style"
-                    role="tablist"
-                  >
-                    <a class="active" data-bs-toggle="tab" href="#pro-1"
-                      ><img
-                        src="{% static 'img/product-details/product-detalis-s1.jpg' %}"
-                        alt=""
-                    /></a>
-                    <a data-bs-toggle="tab" href="#pro-2"
-                      ><img
-                        src="{% static 'img/product-details/product-detalis-s2.jpg' %}"
-                        alt=""
-                    /></a>
-                    <a data-bs-toggle="tab" href="#pro-3"
-                      ><img
-                        src="{% static 'img/product-details/product-detalis-s3.jpg' %}"
-                        alt=""
-                    /></a>
-                    <a data-bs-toggle="tab" href="#pro-4"
-                      ><img
-                        src="{% static 'img/product-details/product-detalis-s4.jpg' %}"
-                        alt=""
-                    /></a>
-                  </div>
-                </div>
+                <div class="product-thumbnail"></div>
                 <!-- Thumbnail image end -->
               </div>
               <div class="col-md-7 col-sm-7 col-xs-12">
                 <div class="modal-pro-content">
-                  <h3>Dutchman's Breeches</h3>
-                  <div class="product-price-wrapper">
-                    <span class="product-price-old">£162.00 </span>
-                    <span>£120.00</span>
-                  </div>
+                  <h3>{{ product.tea_name }}</h3>
+                  <p>
+                    Tea type:&#x2004;{{product.tea_type }}<br />
+                    Origin:&#x2003;&#x2009;&#x2006;{{product.origin }}<br />
+                    Color:&#x2003;&#x2004;&#x2006;&#x2006;&#x2006;{{product.color}}<br />
+                    Aroma:&#x2003;&#x2006;&#x2009;{{product.aroma}}<br />
+                    Taste:&#x2003;&#x2004;&#x2006;&#x2006;&#x2009;{{product.taste}}<br />
+                    Nature:&#x2003;&#x2009;{{product.tea_nature}}<br />
+                    Weight:&#x2003;&#x2009;{{product.weight}} g<br />
+                    Price:&#x2003;&#x2003;&#x2009;<span
+                      class="product-price-wrapper"
+                      ><span class="product-price-old"
+                        >${{ product.original_price }}</span
+                      >&#x2003;
+                      <span style="color: #519f10; font-size: 20px"
+                        >${{ product.discounted_price }}</span
+                      ></span
+                    >
+                  </p>
                   <p>
                     Pellentesque habitant morbi tristique senectus et netus et
                     malesuada fames ac turpis egestas. Vestibulum tortor quam,
                     feugiat vitae, ultricies eget, tempor sit amet.
                   </p>
-                  <div class="quick-view-select">
-                    <div class="select-option-part">
-                      <label>Size*</label>
-                      <select class="select">
-                        <option value="">S</option>
-                        <option value="">M</option>
-                        <option value="">L</option>
-                      </select>
-                    </div>
-                    <div class="quickview-color-wrap">
-                      <label>Color*</label>
-                      <div class="quickview-color">
-                        <ul>
-                          <li class="blue">b</li>
-                          <li class="red">r</li>
-                          <li class="pink">p</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-quantity">
+                  <div class="product-quantity mt-3">
                     <div class="cart-plus-minus">
                       <input
                         class="cart-plus-minus-box"
                         type="text"
                         name="qtybutton"
-                        value="02"
+                        value="01"
                       />
                     </div>
-                    <button>Add to cart</button>
+                    <a class="button" type="button" href="{{ product.get_url }}"
+                      >Add to cart</a
+                    >
                   </div>
+                  {% if product.is_available%}
                   <span><i class="fa fa-check"></i> In stock</span>
+                  {% else %}
+                  <span
+                    ><i class="fa fa-check"></i> Not availabel in this
+                    moment</span
+                  >
+                  {% endif %}
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {% endfor %} {% endif %}
       </div>
     </div>
   </div>

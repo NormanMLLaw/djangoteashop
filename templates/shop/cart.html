@@ -55,6 +55,41 @@
                     >
                   </td>
                   <td class="product-quantity">
+                    <!-- <div class="col"> -->
+                    <div class="input-group input-spinner">
+                      <div class="input-group-prepend">
+                        <a
+                          href="{% url 'remove_cart' cart_item.product.id%}"
+                          class="button btn-light"
+                          type="button"
+                          id="button-plus"
+                        >
+                          <i class="fa fa-minus"></i>
+                        </a>
+                      </div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value="{{cart_item.quantity}}"
+                      />
+                      <div class="input-group-append">
+                        <a
+                          href="{% url 'add_cart' cart_item.product.id%}"
+                          class="button btn-light"
+                          type="button"
+                          id="button-minus"
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- input-group.// -->
+                    <!-- </div> -->
+                    <!-- col.// -->
+                  </td>
+
+                  {% comment %}
+                  <td class="product-quantity">
                     <div class="pro-dec-cart">
                       <input
                         class="cart-plus-minus-box"
@@ -64,6 +99,7 @@
                       />
                     </div>
                   </td>
+                  {% endcomment %}
 
                   <td class="product-subtotal">${{ cart_item.sub_total }}</td>
                   <td class="product-remove">
@@ -152,7 +188,7 @@
                   Cart Total
                 </h4>
               </div>
-              <h5>Total products <span>${{ cart_item.grand_total }}</span></h5>
+              <h5>Total products <span>${{ cart_item.total }}</span></h5>
               <div class="total-shipping">
                 <h5>Total shipping</h5>
                 <ul>
