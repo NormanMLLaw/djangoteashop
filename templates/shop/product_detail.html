@@ -128,27 +128,37 @@
             </ul>
           </div> -->
           <div class="quality-add-to-cart">
+            {% comment %}
             <div class="quality">
               <label>Qty:</label>
               <input
                 class="cart-plus-minus-box"
                 type="text"
                 name="qtybutton"
-                value="02"
+                value="{{ cart_item.quantity }}"
               />
             </div>
-            <div class="shop-list-cart-wishlist">
+            {% endcomment %}
+
+            <div class="shop-list-cart-wishlist mx-10">
               <a
+                type="button"
                 title="Add To Cart"
                 href="{% url 'add_cart' single_product.id %}"
+                style="font-family: 'Work Sans', sans-serif; font-weight: 600"
+                >&nbsp;&nbsp;Add&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i
+                  class="ion-android-cart"
+                ></i
+                >&nbsp;&nbsp;</a
               >
-                <i class="ion-android-cart"></i>
-              </a>
+              {% comment %}
               <a title="Wishlist" href="#">
                 <i class="ion-android-favorite-outline"></i>
               </a>
+              {% endcomment %}
             </div>
           </div>
+
           <!-- <div class="pro-dec-categories">
             <ul>
               <li class="categories-title">Categories:</li>

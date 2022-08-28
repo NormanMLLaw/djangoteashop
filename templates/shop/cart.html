@@ -31,6 +31,9 @@
                   <th>Product Name</th>
                   <th>Until Price</th>
                   <th>Qty</th>
+                  {% comment %}
+                  <th>Tax</th>
+                  {% endcomment %}
                   <th>Subtotal</th>
                   <th>Delete</th>
                 </tr>
@@ -40,26 +43,29 @@
                 <tr>
                   <td class="product-thumbnail">
                     <a href="#"
-                      ><img src="assets/img/cart/cart-3.jpg" alt=""
+                      ><img src="{{ cart_item.product.photo_1_t.url }}" alt=""
                     /></a>
                   </td>
                   <td class="product-name">
-                    <a href="#">Dutchman's Breeches </a>
+                    <a href="#">{{ cart_item.product.tea_name }}</a>
                   </td>
                   <td class="product-price-cart">
-                    <span class="amount">$260.00</span>
+                    <span class="amount"
+                      >${{ cart_item.product.discounted_price }}</span
+                    >
                   </td>
                   <td class="product-quantity">
                     <div class="pro-dec-cart">
                       <input
                         class="cart-plus-minus-box"
                         type="text"
-                        value="02"
+                        value="{{ cart_item.quantity }}"
                         name="qtybutton"
                       />
                     </div>
                   </td>
-                  <td class="product-subtotal">$110.00</td>
+
+                  <td class="product-subtotal">${{ cart_item.sub_total }}</td>
                   <td class="product-remove">
                     <a href="#"><i class="fa fa-pencil"></i></a>
                     <a href="#"><i class="fa fa-times"></i></a>
@@ -146,7 +152,7 @@
                   Cart Total
                 </h4>
               </div>
-              <h5>Total products <span>$260.00</span></h5>
+              <h5>Total products <span>${{ cart_item.grand_total }}</span></h5>
               <div class="total-shipping">
                 <h5>Total shipping</h5>
                 <ul>
