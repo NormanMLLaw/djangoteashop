@@ -88,23 +88,14 @@
                     <!-- col.// -->
                   </td>
 
-                  {% comment %}
-                  <td class="product-quantity">
-                    <div class="pro-dec-cart">
-                      <input
-                        class="cart-plus-minus-box"
-                        type="text"
-                        value="{{ cart_item.quantity }}"
-                        name="qtybutton"
-                      />
-                    </div>
-                  </td>
-                  {% endcomment %}
-
                   <td class="product-subtotal">${{ cart_item.sub_total }}</td>
                   <td class="product-remove">
-                    <a href="#"><i class="fa fa-pencil"></i></a>
-                    <a href="#"><i class="fa fa-times"></i></a>
+                    <a
+                      type="button"
+                      class="button btn-danger"
+                      href="{% url 'remove_cart_item' cart_item.product.id%}"
+                      ><!-- <i class="fa fa-times"></i> -->Delete</a
+                    >
                   </td>
                 </tr>
                 {% endfor %}

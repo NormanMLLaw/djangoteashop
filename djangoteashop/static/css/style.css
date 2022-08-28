@@ -2660,7 +2660,7 @@ textarea:focus {
 }
 .modal-pro-content .product-quantity .cart-plus-minus {
     display: inline-block;
-    float: left;
+    float: center;
     height: 40px;
     padding: 0;
     position: relative;
@@ -3690,13 +3690,16 @@ h4.shop-sidebar-title {
     text-align: center;
     width: 94px;
 }
-.table-content table td.product-remove a {
-    color: #aaa;
-    font-size: 17px;
+.table-content table td.product-remove a.btn-danger {
+    background: red;
+    color: #fff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
     margin: 0 13px;
 }
-.table-content table td.product-remove a:hover {
-    color: #519f10;
+.table-content table td.product-remove a.btn-danger:hover {
+    background: #519f10;
+    color: #000;
 }
 h3.page-title {
   font-family: "Work Sans",sans-serif;
