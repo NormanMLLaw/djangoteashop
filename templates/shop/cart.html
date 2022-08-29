@@ -4,9 +4,13 @@
 <!-- block content -->
 {% block content %}
 <!-- Breadcrumb Area Start -->
-<div class="breadcrumb-area bg-image-3 ptb-150">
+<!-- <div class="breadcrumb-area bg-image-3 ptb-150"> -->
+<div
+  class="breadcrumb-area ptb-150"
+  style="background-image: url(../static/img/banner/banner.jpg)"
+>
   <div class="container">
-    <div class="breadcrumb-content text-center">
+    <div class="breadcrumb-content text-center mt-50">
       <h3>CART PAGE</h3>
       <ul>
         <li><a href="{% url 'index' %}">Home</a></li>
@@ -19,6 +23,14 @@
 <!-- shopping-cart-area start -->
 <div class="cart-main-area ptb-100">
   <div class="container">
+    {% if not cart_items %}
+    <div class="text-center mb-100">
+      <h4 class="mb-20">Your shopping cart is empty</h4>
+      <a href="{% url 'shop' %}" type="button" class="button"
+        >Continue shopping</a
+      >
+    </div>
+    {% else %}
     <h3 class="page-title">Your cart items</h3>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-12">
@@ -106,7 +118,7 @@
             <div class="col-lg-12">
               <div class="cart-shiping-update-wrapper">
                 <div class="cart-shiping-update">
-                  <a href="#">Continue Shopping</a>
+                  <a href="{% url 'shop' %}">Continue Shopping</a>
                 </div>
                 <div class="cart-clear">
                   <button>Update Shopping Cart</button>
@@ -200,4 +212,4 @@
     </div>
   </div>
 </div>
-{% endblock %}
+{% endif %} {% endblock %}

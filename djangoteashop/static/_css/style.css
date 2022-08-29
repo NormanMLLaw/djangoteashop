@@ -1439,7 +1439,7 @@ textarea:focus {
   background-size: cover;
 }
 .bg-image-3{
-  background-image: url("../static/img/banner/about-us1.jpg");
+  background-image: url("../../assets/img/bg/breadcrumb.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2561,7 +2561,7 @@ textarea:focus {
     margin-bottom: 0.375rem;
     opacity: 1;
 }
-.product-quantity button {
+/* .product-quantity  button, a.button {
     background: #333 none repeat scroll 0 0;
     border: medium none;
     border-radius: 3px;
@@ -2576,19 +2576,50 @@ textarea:focus {
     padding: 0 20px;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
+} */
+
+
+.input-group-prepend .input-group-append, a.button {
+    background: #454545 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    height: 40px;
+    letter-spacing: 0.025em;
+    line-height: 40px;
+    margin-top: 3px;
+    margin-left: 9px;
+    margin-right: 9px;
+    padding: 0 7px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
 }
+
+
+.input-group-prepend .input-group-append, a.button:hover {
+    background: #519f10 none repeat scroll 0 0;
+}
+
+
 .modal-pro-content .product-quantity {
     display: block;
     margin: 0 0 16px;
     overflow: hidden;
 }
 .product-quantity button:hover {
-    background: #ff5313 none repeat scroll 0 0;
+    background: #519f10 none repeat scroll 0 0;
 }
 .quickview-color-wrap {
     margin: 29px 0 0;
 }
-.modal-pro-content .product-quantity .cart-plus-minus {
+/* .modal-pro-content .product-quantity .cart-plus-minus {
+    display: inline-block;
+    float: left;
+} */
+.modal-pro-content .input-group .input-spinner {
     display: inline-block;
     float: left;
 }
@@ -2629,7 +2660,7 @@ textarea:focus {
 }
 .modal-pro-content .product-quantity .cart-plus-minus {
     display: inline-block;
-    float: left;
+    float: center;
     height: 40px;
     padding: 0;
     position: relative;
@@ -3094,16 +3125,16 @@ h4.shop-sidebar-title {
     display: none;
 }
 .shop-list-cart-wishlist a {
-  background-color: #f4f5f7;
-  color: #242424;
+    background-color: #f4f5f7;
+    color: #242424;
   display: inline-block;
   font-size: 18px;
   height: 40px;
   line-height: 42px;
   margin: 0 5px 0 0;
-  text-align: center;
+  text-align: left;
   transition: all 0.3s ease 0s;
-  width: 40px;
+  /* width: 40px!important; */
 }
 .shop-list-cart-wishlist a:hover {
     background-color: #519f10;
@@ -3339,7 +3370,7 @@ h4.shop-sidebar-title {
     border-top: 1px solid #ebebeb;
     display: block;
     overflow: hidden;
-    padding: 40px 0 37px;
+    padding: 30px 0 10px;
 }
 .quality-add-to-cart .product-action {
     justify-content: left;
@@ -3593,7 +3624,7 @@ h4.shop-sidebar-title {
 }
 .product-details-content .shop-list-cart-wishlist a i {
     line-height: 40px;
-    display: block;
+    /* display: block; */
 }
 
 /*---------------------------
@@ -3659,13 +3690,16 @@ h4.shop-sidebar-title {
     text-align: center;
     width: 94px;
 }
-.table-content table td.product-remove a {
-    color: #aaa;
-    font-size: 17px;
+.table-content table td.product-remove a.btn-danger {
+    background: red;
+    color: #fff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
     margin: 0 13px;
 }
-.table-content table td.product-remove a:hover {
-    color: #519f10;
+.table-content table td.product-remove a.btn-danger:hover {
+    background: #519f10;
+    color: #000;
 }
 h3.page-title {
   font-family: "Work Sans",sans-serif;
@@ -5517,6 +5551,44 @@ h4.section-title-about::before {
 section.wn_contact_area {
   padding-bottom: 60px;
 }
+
+<!-- shopping cart from outside -->
+
+.widget-header {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.widget-header a {
+  color: #343a40;
+}
+.widget-header a:hover {
+  color: #3167eb;
+}
+.widget-header i {
+  color: #969696;
+}
+.widget-header form {
+  min-width: 280px;
+}
+.widget-header .title {
+  display: block;
+}
+.widget-header .notify {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+}
+.widget-header:hover i {
+  color: #3167eb;
+}
+
+[class*=card-product] .badge {
+    top: 10px;
+    left: 10px;
+    position: absolute;
+  }
+
 }
 
 
