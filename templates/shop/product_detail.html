@@ -104,7 +104,7 @@
             {% if single_product.is_available %}
             <p>Available: <span>In stock</span></p>
             {% else %}
-            <p class="danger">Our of stock, will be availabled soon.</p>
+            <p class="danger">Out of stock, will be availabled soon.</p>
             {% endif %}
           </div>
           <p class="mt-3 mb-3">{{ single_product.properties }}</p>
@@ -144,19 +144,32 @@
                 <div class="product-quantity mt-3">
                   <div class="cart-plus-minus">
                     <div class="shop-list-cart-wishlist mx-10">
+                      {% if in_cart %}
+                      <a
+                      type="button"
+                      class="btn btn-success"
+                      title="Add To Cart"
+                        href="{% url 'add_cart' single_product.id %}"
+                        style="
+                          font-family: 'Work Sans', sans-serif;
+                          font-weight: 600;">&nbsp;&nbsp;Added&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i class="fa-solid fa-check"></i>&nbsp;</a>
+
+                          <a class="btn btn-outline-primary"
+                          title="Add To Cart"
+                            href="{% url 'cart' %}"
+                            style="
+                              font-family: 'Work Sans', sans-serif;
+                              font-weight: 600;">&nbsp;&nbsp;View Cart&nbsp;&nbsp;<i class="fas fa-eye"></i></a>
+                      {% else %}
                       <a
                         type="button"
                         title="Add To Cart"
                         href="{% url 'add_cart' single_product.id %}"
                         style="
                           font-family: 'Work Sans', sans-serif;
-                          font-weight: 600;
-                        "
-                        >&nbsp;&nbsp;Add&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i
-                          class="ion-android-cart"
-                        ></i
-                        >&nbsp;&nbsp;</a
-                      >
+                          font-weight: 600;">&nbsp;&nbsp;Add&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i
+                          class="ion-android-cart"></i>&nbsp;&nbsp;</a>
+                      {% endif %}
                     </div>
                   </div>
 

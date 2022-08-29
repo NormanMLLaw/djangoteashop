@@ -40,10 +40,10 @@
             </div>
 
             <div class="header-cart">
-              <a href="#" class="widget-header"> 
+              <a href="{% url 'cart' %}" class="widget-header"> 
               <div class="cart-icon">
                 <i class="ti-shopping-cart"></i>
-              </div><span class="badge badge-pill badge-danger notify mt-25">0</span>
+              </div><span class="badge badge-pill badge-danger notify mt-25">{{cart_count}}</span>
             </a>
               </div>
             </div>
