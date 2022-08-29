@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product
 from category.models import Category
+from carts.views import _cart_id
+from carts.models import CartItem
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -25,6 +28,9 @@ def shop(request, category_slug=None):
 def product_detail(request, category_slug, product_slug):
     try:
         single_product = Product.objects.get(category__slug=category_slug, slug=product_slug)
+        in_cart = CartItem.objects.filter(cart__cart_id=_cart_id(request), product=single_product).exists()
+        return HttpResponse(in_cart)
+        exit()
     except Exception as e:
         raise e
     
