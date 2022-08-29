@@ -56,8 +56,8 @@
             </div>
             <div class="grid-list-product-wrapper">
               <div class="product-grid product-view pb-20">
+                {% if products %} {% for product in products %}
                 <div class="row">
-                  {% if products %} {% for product in products %}
                   <div
                     class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
@@ -143,6 +143,7 @@
               </div>
                           
             <!-- Modal -->
+            <!-- norman -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -212,8 +213,8 @@
                     </div>
                   </div>
                 </div>
-                {% endfor %} {% endif %}
               </div>
+              {% endfor %} {% endif %}
             </div>
 
 
