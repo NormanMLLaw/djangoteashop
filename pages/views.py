@@ -25,8 +25,8 @@ def contact(request):
     return render(request, "pages/contact.html")
 
 
-def login_register(request):
-    return render(request, "pages/login_register.html")
+# def login_register(request):
+#     return render(request, "accounts/login_register.html")
 
 
     
