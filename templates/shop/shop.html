@@ -3,7 +3,8 @@
     {% load static %}
     <!-- block content -->
     {% block content %}    <!-- Breadcrumb Area Start -->
-    <div class="breadcrumb-area bg-image-3 ptb-150 pt-100">
+    <!-- <div class="breadcrumb-area bg-image-3 ptb-150 pt-100"> -->
+    <div class="breadcrumb-area ptb-150 pt-100" style="background-image: url(../static/img/banner/banner.jpg)">
       <div class="container">
         <div class="breadcrumb-content text-center">
           <h3>SHOP PAGE</h3>
@@ -13,6 +14,7 @@
           </ul>
         </div>
       </div>
+    </div>
     <!-- Breadcrumb Area End -->
     <!-- Shop Page Area Start -->
     <div class="shop-page-area ptb-100">
@@ -55,25 +57,19 @@
             </div>
             <div class="grid-list-product-wrapper">
               <div class="product-grid product-view pb-20">
-                {% if products %} {% for product in products %}
                 <div class="row">
                   <div
                     class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30"
                   >
-                    <div class="product-wrapper">
+                  {% if products %} {% for product in products %}
+                  <div class="product-wrapper">
                       <div class="product-img">
                         <a href="{{ product.get_url }}">
                           <img alt="" src="{{ product.photo_1.url }}" />
                         </a>
                         <span>-{{ product.discount_rate }}%</span>
                         <div class="product-action">
-                          {% comment %} <a class="action-wishlist" href="#" title="Wishlist">
-                            <i class="ion-android-favorite-outline"></i>
-                          </a>
-                          <a class="action-cart" href="{{ product.get_url }}" title="Add To Cart">
-                            <i class="ion-ios-shuffle-strong"></i>
-                          </a> {% endcomment %}
-                          <a
+                          {% comment %} <a
                             class="action-compare"
                             href="{{ product.get_url }}"
                             data-bs-target="#exampleModal"
@@ -81,7 +77,7 @@
                             title="Quick View"
                           >
                             <i class="ion-ios-search-strong"></i>
-                          </a>
+                          </a> {% endcomment %}
                         </div>
                       </div>
                       <div class="product-content text-left">
@@ -104,6 +100,7 @@
                           <span class="product-price-old">${{ product.original_price }} </span>
                         </div>
                       </div>
+
                       <div class="product-list-details">
                         <h4>
                           <a href="{{ product.get_url }}">{{ product.tea_name}}</a>
@@ -119,7 +116,7 @@
                           exercitation ullamco laboris nisi ut aliquip ex ea
                           commodo consequat.
                         </p>
-                        <div class="shop-list-cart-wishlist">
+                        {% comment %} <div class="shop-list-cart-wishlist">
                           <a href="#" title="Wishlist"
                             ><i class="ion-android-favorite-outline"></i
                           ></a>
@@ -134,16 +131,17 @@
                           >
                             <i class="ion-ios-search-strong"></i>
                           </a>
-                        </div>
+                        </div> {% endcomment %}
                       </div>
                     </div>
+                    {% endfor %} {% endif %}
                   </div>
                 </div>
               </div>
                           
             <!-- Modal -->
             <!-- norman -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            {% comment %} <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -214,7 +212,7 @@
                 </div>
               </div>
               {% endfor %} {% endif %}
-            </div>
+            </div> {% endcomment %}
 
 
 
