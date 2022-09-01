@@ -27,7 +27,10 @@
   <!-- ============================ COMPONENT REGISTER   ================================= -->
   <div class="card mx-auto" style="max-width: 520px; margin-top: 40px">
     <article class="card-body">
-      <header class="mb-4"><h4 class="card-title">Register</h4></header>
+      {% include 'partials/_alerts.html' %}
+      <header class="mb-4">
+        <h4 class="theme-color card-title"><b>Register</b></h4>
+      </header>
       <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         <div class="form-row">
@@ -69,10 +72,11 @@
           <button
             type="submit"
             style="font-family: 'Work Sans', sans-serif; font-weight: 600"
-            class="btn btn-primary btn-block"
+            class="btn btn-style-2 btn-block pt-3 pb-4"
           >
             Register
           </button>
+          {{form.email.errors}} {{form.non_field_errors}}
         </div>
         <!-- form-group// -->
       </form>
@@ -80,7 +84,9 @@
     <!-- card-body.// -->
   </div>
   <!-- card .// -->
-  <p class="text-center mt-4">Have an account? <a href="">Log In</a></p>
+  <p class="text-center mt-4">
+    Have an account? <a class="theme-color" href="{% url 'login' %}">Log In</a>
+  </p>
   <br /><br />
   <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
 </section>

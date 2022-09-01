@@ -25,9 +25,16 @@
                   </li>
                   </li>
                   <li><a href="{% url 'contact' %}">contact</a></li>
-                  <li class="top-hover">
+                  {% if user.id is None %}
+                  <li class="top-hover">  
                     <a href="{% url 'login' %}">login</a> / <a href="{% url 'register' %}">register</a>
                   </li>
+                  {% else %}
+                  <li><a href="#">Welcome {{ user.first_name }}</a></li>
+                  <li class="top-hover">
+                    <a href="#">Dashboard</a> / <a href="{% url 'logout' %}">logout</a>
+                  </li>
+                  {% endif %}
                 </ul>
               </nav>
             </div>
@@ -61,7 +68,16 @@
               <li><a href="{% url 'about' %}">About</a></li>
               <li><a href="{% url 'shop' %}">Shop</a></li>
               <li><a href="{% url 'contact' %}"> Contact us </a></li>
-              <li><a href="{% url 'login' %}">login</a> / <a href="{% url 'register' %}">register</a></li>
+              {% if user.id is not None %}
+              <li class="top-hover">
+                <a href="{% url 'login' %}">login</a> / <a href="{% url 'register' %}">register</a>
+              </li>
+              {% else %}
+              <li>Welcome {{ user.first_name }}</li>
+              <li class="top-hover">
+                <a href="{% url 'login' %}">Dashboard</a> / <a href="{% url 'register' %}">logout</a>
+              </li>
+              {% endif %}
             </ul>
           </nav>
         </div>
