@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+<!-- load static -->
+{% load static %}
+<!-- block content -->
+{% block content %}
+<!-- Breadcrumb Area Start -->
+<div
+  class="breadcrumb-area ptb-150"
+  style="background-image: url(../../static/img/banner/banner.jpg)"
+>
+  <div class="container">
+    <div class="breadcrumb-content text-center mt-50">
+      <h3>CGECKOUT PAGE</h3>
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li class="active">Checkout page</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb Area End -->
+<!-- shopping-cart-area start -->
+<div class="cart-main-area ptb-100">
+  <div class="container">
+    <h3 class="page-title">Your cart items</h3>
+    <div class="row">
+      <aside class="col-lg-6">
+        <div class="card-body">
+          <h4 class="card-title mb-4">Billing Address</h4>
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="col form-group">
+                <label for="">First Name</label>
+                <input type="text" name="first_name" class="form-control" required>
+              </div>
+              <div class="col form-group">
+                <label for="">Last Name</label>
+                <input type="text" name="last_name" class="form-control" required>
+              </div>
+            </div>
+          </form>
+
+          <div class="form-row">
+            <div class="col form-group">
+              <label for="">Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="col form-group">
+              <label for="">Phone Number</label>
+              <input type="text" name="phone" class="form-control" required>
+            </div>
+          </div>
+
+
+        <div class="form-row">
+          <div class="col form-group">
+            <label for="">Address Line 1</label>
+            <input type="text" name="address_line_1" class="form-control" required>
+          </div>
+          <div class="col form-group">
+            <label for="">Address Line 2</label>
+            <input type="text" name="address_line_2" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col form-group">
+            <label for="">City</label>
+            <input type="text" name="city" class="form-control" required>
+          </div>
+          <div class="col form-group">
+            <label for="">State</label>
+            <input type="text" name="state" class="form-control" required>
+          </div>
+          <div class="col form-group">
+            <label for="">Country</label>
+            <input type="text" name="country" class="form-control" required>
+          </div>
+        </div>
+
+
+      </form>
+
+      </aside>
+      <aside class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <table style="border: 0px; margin-bottom: 10px">
+              <thead>
+                <tr>
+                  <th>Product&#x2003;&#x2003;&#x2003;</th>
+                  <th>Quantity&#x2003;&#x2003;&#x2003;</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for cart_item in cart_items %}
+                <tr>
+                  <td class="product-thumbnail">
+                    <a href="{{ cart_item.product.get_url }}"
+                      ><img src="{{ cart_item.product.photo_1_t.url }}" alt=""
+                    /></a>&#x2004;
+                  {% comment %} </td>
+
+                <tr>
+                  <td class="product-name"> {% endcomment %}
+                    <a href="{{ cart_item.product.get_url }}"
+                      >{{ cart_item.product.tea_name }}&#x2003;&#x2003;&#x2003;</a
+                    >
+                  </td>
+                  <td class="product-quantity">
+                    <!-- <div class="col"> -->
+                    <div class="input-group input-spinner">
+                      {% comment %} <div class="input-group-prepend">
+                        <a
+                          href="{% url 'remove_cart' cart_item.product.id%}"
+                          class="button btn-light"
+                          type="button"
+                          id="button-plus"
+                        >
+                          <i class="fa fa-minus"></i>
+                        </a>
+                      </div> {% endcomment %}
+                      <label for="">{{cart_item.quantity}}</label>
+                      {% comment %} <div class="input-group-append">
+                        <a
+                          href="{% url 'add_cart' cart_item.product.id%}"
+                          class="button btn-light"
+                          type="button"
+                          id="button-minus"
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div> {% endcomment %}
+                    </div>
+                    <!-- input-group.// -->
+                    <!-- col.// -->
+                  </td>
+                  {% comment %} <td class="product-price-cart">
+                    <span class="amount"
+                      >${{ cart_item.product.discounted_price }}</span
+                    >
+                  </td> {% endcomment %}
+
+                  <td class="product-subtotal">${{ cart_item.sub_total }}</td>
+                  {% comment %} <td class="product-remove">
+                    <a
+                      type="button"
+                      class="button btn-danger"
+                      href="{% url 'remove_cart_item' cart_item.product.id%}"
+                      ><!-- <i class="fa fa-times"></i> -->Delete</a
+                    >
+                  </td> {% endcomment %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <button type="submit" name="submit" class="btn btn-secondary btn-block">PLACE ORDER</button>
+            <a href="{% url 'shop' %}" class="btn btn-secondary btn-block" style="text-align: center">CONTINUE SHOPPING</a>
+          </form>
+        </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}
