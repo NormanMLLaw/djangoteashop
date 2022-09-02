@@ -24,7 +24,7 @@
                     <a href="{% url 'shop' %}">shop</a>
                   </li>
                   </li>
-                  <li><a href="{% url 'contact' %}">contact</a></li>
+                  <!-- <li><a href="{% url 'contact' %}">contact</a></li> -->
                   {% if user.id is None %}
                   <li class="top-hover">  
                     <a href="{% url 'login' %}">login</a> / <a href="{% url 'register' %}">register</a>
@@ -67,7 +67,7 @@
               </li>
               <li><a href="{% url 'about' %}">About</a></li>
               <li><a href="{% url 'shop' %}">Shop</a></li>
-              <li><a href="{% url 'contact' %}"> Contact us </a></li>
+              <!-- <li><a href="{% url 'contact' %}"> Contact us </a></li> -->
               {% if user.id is not None %}
               <li class="top-hover">
                 <a href="{% url 'login' %}">login</a> / <a href="{% url 'register' %}">register</a>
