@@ -75,7 +75,7 @@
               {% else %}
               <li>Welcome {{ user.first_name }}</li>
               <li class="top-hover">
-                <a href="{% url 'login' %}">Dashboard</a> / <a href="{% url 'register' %}">logout</a>
+                <a href="{% url 'dashboard' %}">dashboard</a> / <a href="{% url 'login' %}">logout</a>
               </li>
               {% endif %}
             </ul>

@@ -83,14 +83,16 @@
               <i class="ion-android-star-outline theme-star"></i>
               <i class="ion-android-star-outline"></i>
             </div>
-            <div class="pro-dec-review">
+            <!-- <div class="pro-dec-review">
               <ul>
                 <li>32 Reviews</li>
                 <li>Add Your Reviews</li>
               </ul>
-            </div>
+            </div> -->
           </div>
-          <p>
+          <form action="{% url 'add_cart' single_product.id %}" method="POST">
+            {% csrf_token %}
+            <p>
             Tea type:&#x2004;{{ single_product.tea_type }}<br />
             Origin:&#x2003;&#x2009;&#x2006;{{ single_product.origin }}<br />
             Color:&#x2003;&#x2004;&#x2006;&#x2006;&#x2006;{{single_product.color}}<br />
@@ -102,6 +104,20 @@
               >${{ single_product.discounted_price }}</span
             >
           </p>
+          <div hidden>
+          <select name="package" class="form-control">
+            {% for i in single_product.variation_set.packages %}
+            <option value="{{i.variation_value | lower }}" selected>{{i.variation_value | capfirst}}</option>
+            {% endfor %}
+          </select>
+          </div>
+          <div hidden>
+            <select name="size" class="form-control">
+              {% for i in single_product.variation_set.sizes %}
+              <option value="{{i.variation_value | lower }}" selected>{{i.variation_value | capfirst}}</option>
+              {% endfor %}
+          </select>
+          </div>
 
           <div class="in-stock">
             {% if single_product.store <= 0 %}
@@ -111,95 +127,24 @@
             {% endif %}
           </div>
           <p class="mt-3 mb-3">{{ single_product.properties }}</p>
-          <!-- <div class="pro-dec-feature">
-            <ul>
-              <li>
-                <input type="checkbox" /> Protection Plan:
-                <span> 2 year $4.99</span>
-              </li>
-              <li>
-                <input type="checkbox" /> Remote Holder: <span> $9.99</span>
-              </li>
-              <li>
-                <input type="checkbox" /> Koral Alexa Voice Remote Case:
-                <span> Red $16.99</span>
-              </li>
-              <li>
-                <input type="checkbox" /> Amazon Basics HD Antenna:
-                <span>25 Mile $14.99</span>
-              </li>
-            </ul>
-          </div> -->
-
-          <!-- <div class="product-quantity mt-3">
-            <div class="cart-plus-minus">
-              <div class="quality-add-to-cart">
-                <div class="quality">
-                  <label>Qty:</label>
-                  <input
-                    class="cart-plus-minus-box"
-                    type="text"
-                    name="qtybutton"
-                    value="{{ cart_item.quantity }}"
-                  />
-                </div> -->  
 
                 <div class="product-quantity mt-3">
                   {% if single_product.store <= 0 %}
                   <a href="{% url 'shop' %}" type="button" class="button">&#x2004;Continue shopping&#x2004;</a>
                   {% else %}
                   <div class="cart-plus-minus">
-                    <div class="shop-list-cart-wishlist mx-10">
+                    <div class="shop-list-cart-wishlist mx-10 row">
                       {% if in_cart %}
-                      <a
-                      type="button"
-                      class="btn btn-success"
-                      title="Add To Cart"
-                        href="{% url 'add_cart' single_product.id %}"
-                        style="
-                          font-family: 'Work Sans', sans-serif;
-                          font-weight: 600;">&nbsp;&nbsp;Added&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i class="fa-solid fa-check"></i>&nbsp;</a>
-
-                          <a class="btn btn-outline-primary"
-                          title="Add To Cart"
-                            href="{% url 'cart' %}"
-                            style="
-                              font-family: 'Work Sans', sans-serif;
-                              font-weight: 600;">&nbsp;&nbsp;View Cart&nbsp;&nbsp;<i class="fas fa-eye"></i></a>
+                      <button type="submit" class="btn-style" title="Add To Cart" href="{% url 'add_cart' single_product.id %}">Added to Cart</button>
+                      <button type="button" class="btn-style" title="View Cart" href="{% url 'cart' %}">View Cart</button>
                       {% else %}
-                      <a
-                        type="button"
-                        title="Add To Cart"
-                        href="{% url 'add_cart' single_product.id %}"
-                        style="
-                          font-family: 'Work Sans', sans-serif;
-                          font-weight: 600;">&nbsp;&nbsp;Add&nbsp;to&nbsp;Cart&nbsp;&nbsp;<i
-                          class="ion-android-cart"></i>&nbsp;&nbsp;</a>
+                      <button type="submit" class="btn-style" title="Add To Cart" href="{% url 'add_cart' single_product.id %}">Added to Cart</button>
                       {% endif %}
                     </div>
                   </div>
                   {% endif %}
-
-
-                  <!-- <div class="pro-dec-categories">
-            <ul>
-              <li class="categories-title">Categories:</li>
-              <li><a href="#">Green,</a></li>
-              <li><a href="#">Herbal, </a></li>
-              <li><a href="#">Loose,</a></li>
-              <li><a href="#">Mate,</a></li>
-              <li><a href="#">Organic </a></li>
-            </ul>
-          </div>
-          <div class="pro-dec-categories">
-            <ul>
-              <li class="categories-title">Tags:</li>
-              <li><a href="#"> Oolong, </a></li>
-              <li><a href="#"> Pu'erh,</a></li>
-              <li><a href="#"> Dark,</a></li>
-              <li><a href="#"> Special </a></li>
-            </ul>-->
                 </div>
+                </form>
                 <div class="pro-dec-social">
                   <ul>
                     <li>
