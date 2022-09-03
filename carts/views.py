@@ -15,6 +15,7 @@ def _cart_id(request):
 
 
 def add_cart(request, product_id):
+    current_user = request.user
     product = Product.objects.get(id=product_id) # get the product
     try: 
         cart = Cart.objects.get(cart_id=_cart_id(request)) # get the cart using the cart_id present in the session
@@ -60,11 +61,14 @@ def remove_cart_item(request, product_id):
 
 # Create your views here.
 def cart(request, total=0, quantity=0, cart_items=None):
-    tax = 0
-    grand_total = 0
     try:
-        cart = Cart.objects.get(cart_id=_cart_id(request))
-        cart_items = CartItem.objects.filter(cart=cart, is_active=True)
+        tax = 0
+        grand_total = 0
+        if request.user.is_authenticated:
+            cart_items = CartItem.objects.filter(user=request.user, is_active=True)
+        else:
+            cart = Cart.objects.get(cart_id=_cart_id(request))
+            cart_items = CartItem.objects.filter(cart=cart, is_active=True)
         for cart_item in cart_items:
             total += (cart_item.product.discounted_price * cart_item.quantity)
             quantity += cart_item.quantity
