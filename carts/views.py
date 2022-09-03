@@ -1,10 +1,11 @@
-from http.client import HTTPResponse
+# from http.client import HTTPResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from shop.models import Product, Variation
 from .models import Cart, CartItem
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
+
 
 
 def _cart_id(request):
@@ -12,6 +13,7 @@ def _cart_id(request):
     if not cart:
         cart = request.session.create()
     return cart
+
 
 
 def add_cart(request, product_id):
@@ -132,7 +134,7 @@ def cart(request, total=0, quantity=0, cart_items=None):
     
     return render(request, 'shop/cart.html', context)
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
 def checkout(request, total=0, quantity=0, cart_items=None):
     try:
         tax = 0

@@ -10,12 +10,12 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 # Verification email
-from django.contrib.sites.shortcuts import get_current_site
-from django.template.loader import render_to_string
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-from django.utils.encoding import force_bytes
-from django.contrib.auth.tokens import default_token_generator
-from django.core.mail import EmailMessage
+# from django.contrib.sites.shortcuts import get_current_site
+# from django.template.loader import render_to_string
+# from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+# from django.utils.encoding import force_bytes
+# from django.contrib.auth.tokens import default_token_generator
+# from django.core.mail import EmailMessage
 
 
 # Create your views here.
@@ -69,7 +69,7 @@ def login(request):
                 print('entering inside except block')
                 pass
             auth.login(request, user)
-            messages.success(request, 'You are not logged in.')
+            messages.success(request, 'You are now logged in.')
             return redirect('dashboard')
             # return redirect('checkout')
         else:
