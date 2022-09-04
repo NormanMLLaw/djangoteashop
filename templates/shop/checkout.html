@@ -4,10 +4,7 @@
 <!-- block content -->
 {% block content %}
 <!-- Breadcrumb Area Start -->
-<div
-  class="breadcrumb-area ptb-150"
-  style="background-image: url(../../static/img/banner/banner.jpg)"
->
+<div class="breadcrumb-area ptb-150" style="background-image: url(../../static/img/banner/banner.jpg)">
   <div class="container">
     <div class="breadcrumb-content text-center mt-50">
       <h3>CGECKOUT PAGE</h3>
@@ -27,7 +24,7 @@
       <aside class="col-lg-6">
         <div class="card-body">
           <h4 class="card-title mb-4">Billing Address</h4>
-          <form action="" method="POST">
+          <form action="{% url 'place_order' %}" method="POST">
             {% csrf_token %}
             <div class="form-row">
               <div class="col form-group">
@@ -39,7 +36,6 @@
                 <input type="text" name="last_name" class="form-control" required>
               </div>
             </div>
-          </form>
 
           <div class="form-row">
             <div class="col form-group">
@@ -79,9 +75,6 @@
           </div>
         </div>
 
-
-      </form>
-
       </aside>
       <aside class="col-lg-6">
         <div class="card">
@@ -101,10 +94,6 @@
                     <a href="{{ cart_item.product.get_url }}"
                       ><img src="{{ cart_item.product.photo_1_t.url }}" alt=""
                     /></a>&#x2004;
-                  {% comment %} </td>
-
-                <tr>
-                  <td class="product-name"> {% endcomment %}
                     <a href="{{ cart_item.product.get_url }}"
                       >{{ cart_item.product.tea_name }}&#x2003;&#x2003;&#x2003;</a
                     >
@@ -112,46 +101,14 @@
                   <td class="product-quantity">
                     <!-- <div class="col"> -->
                     <div class="input-group input-spinner">
-                      {% comment %} <div class="input-group-prepend">
-                        <a
-                          href="{% url 'remove_cart' cart_item.product.id%}"
-                          class="button btn-light"
-                          type="button"
-                          id="button-plus"
-                        >
-                          <i class="fa fa-minus"></i>
-                        </a>
-                      </div> {% endcomment %}
                       <label for="">{{cart_item.quantity}}</label>
-                      {% comment %} <div class="input-group-append">
-                        <a
-                          href="{% url 'add_cart' cart_item.product.id%}"
-                          class="button btn-light"
-                          type="button"
-                          id="button-minus"
-                        >
-                          <i class="fa fa-plus"></i>
-                        </a>
-                      </div> {% endcomment %}
                     </div>
                     <!-- input-group.// -->
                     <!-- col.// -->
                   </td>
-                  {% comment %} <td class="product-price-cart">
-                    <span class="amount"
-                      >${{ cart_item.product.discounted_price }}</span
-                    >
-                  </td> {% endcomment %}
 
                   <td class="product-subtotal">${{ cart_item.sub_total }}</td>
-                  {% comment %} <td class="product-remove">
-                    <a
-                      type="button"
-                      class="button btn-danger"
-                      href="{% url 'remove_cart_item' cart_item.product.id%}"
-                      ><!-- <i class="fa fa-times"></i> -->Delete</a
-                    >
-                  </td> {% endcomment %}
+
                 </tr>
                 {% endfor %}
               </tbody>
