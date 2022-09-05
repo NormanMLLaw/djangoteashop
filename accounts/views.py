@@ -105,7 +105,8 @@ def login(request):
                     return redirect(nextPage)
             # return redirect('checkout')
             except: 
-                return redirect('dashboard')
+                # return redirect('dashboard')
+                return redirect('cart')
 
         else:
             messages.error(request, 'Invalid login credentials')
