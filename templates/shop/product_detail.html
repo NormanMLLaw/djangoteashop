@@ -5,9 +5,8 @@
 {% block content %}
 <!-- Breadcrumb Area Start -->
 <!-- <div class="breadcrumb-area bg-image-3 ptb-150"> -->
-  <div
-  class="breadcrumb-area ptb-150"
-  style="background-image: url(../static/img/banner/banner.jpg)">
+  <div class="breadcrumb-area ptb-150 pt-100" style="background-image: url(../../../static/img/banner/banner.jpg)">
+
   <div class="container">
     <div class="breadcrumb-content text-center">
       <h3>SINGLE PRODUCT</h3>
@@ -75,14 +74,14 @@
       <div class="col-lg-6 col-md-12">
         <div class="product-details-content">
           <h4>{{ single_product.tea_name}}</h4>
-          <div class="rating-review">
+          {% comment %} <div class="rating-review">
             <div class="pro-dec-rating">
               <i class="ion-android-star-outline theme-star"></i>
               <i class="ion-android-star-outline theme-star"></i>
               <i class="ion-android-star-outline theme-star"></i>
               <i class="ion-android-star-outline theme-star"></i>
               <i class="ion-android-star-outline"></i>
-            </div>
+            </div> {% endcomment %}
             <!-- <div class="pro-dec-review">
               <ul>
                 <li>32 Reviews</li>
@@ -90,7 +89,7 @@
               </ul>
             </div> -->
           </div>
-          <form action="{% url 'add_cart' single_product.id %}" method="POST">
+          <form action="{% url 'add_cart' single_product.id %}" method="POST" style="background: transparent">
             {% csrf_token %}
             <p>
             Tea type:&#x2004;{{ single_product.tea_type }}<br />
