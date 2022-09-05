@@ -2598,6 +2598,15 @@ textarea:focus {
     transition: all 0.3s ease 0s;
 }
 
+.input-group-prepend .input-group-append, a.button:hover {
+    background: #519f10 none repeat scroll 0 0;
+}
+
+
+.input-group-prepend .input-group-append, form, button:hover {
+    background: #519f10 none repeat scroll 0 0;
+}
+
 
 .input-group-prepend .input-group-append, a.button:hover {
     background: #519f10 none repeat scroll 0 0;
@@ -5588,6 +5597,26 @@ section.wn_contact_area {
     left: 10px;
     position: absolute;
   }
+
+
+.input-group-append, form, button#button-plus {
+    background: #454545 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    height: 40px;
+    letter-spacing: 0.025em;
+    line-height: 40px;
+    margin-top: 3px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0 7px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}  
 
 }
 
