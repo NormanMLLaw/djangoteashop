@@ -116,22 +116,6 @@
                           exercitation ullamco laboris nisi ut aliquip ex ea
                           commodo consequat.
                         </p>
-                        {% comment %} <div class="shop-list-cart-wishlist">
-                          <a href="#" title="Wishlist"
-                            ><i class="ion-android-favorite-outline"></i
-                          ></a>
-                          <a href="#" title="Add To Cart"
-                            ><i class="ion-ios-shuffle-strong"></i
-                          ></a>
-                          <a
-                            href="{{ product.get_url }}"
-                            data-bs-target="#exampleModal"
-                            data-bs-toggle="modal"
-                            title="Quick View"
-                          >
-                            <i class="ion-ios-search-strong"></i>
-                          </a>
-                        </div> {% endcomment %}
                       </div>
                     </div>
                     {% endfor %} {% endif %}
@@ -141,79 +125,6 @@
                           
             <!-- Modal -->
             <!-- norman -->
-            {% comment %} <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button
-                      type="button"
-                      class="close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">x</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row">
-                      <div class="col-md-5 col-sm-5 col-xs-12">
-                        <!-- Thumbnail Large Image start -->
-                        <div class="tab-content">
-                          <div id="pro-1" class="tab-pane fade show active">
-                            <img
-                              src="{{ product.photo_1.url }}"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <!-- Thumbnail Large Image End -->
-                        <!-- Thumbnail Image End -->
-                        <div class="product-thumbnail">
-                        </div>
-                        <!-- Thumbnail image end -->
-                      </div>
-                      <div class="col-md-7 col-sm-7 col-xs-12">
-                        <div class="modal-pro-content">
-                          <h3>{{ product.tea_name }}</h3>
-                          <p>Tea type:&#x2004;{{ product.tea_type }}<br/>
-                          Origin:&#x2003;&#x2009;&#x2006;{{ product.origin }}<br/>
-                          Color:&#x2003;&#x2004;&#x2006;&#x2006;&#x2006;{{ product.color }}<br/>
-                          Aroma:&#x2003;&#x2006;&#x2009;{{ product.aroma}}<br/>
-                          Taste:&#x2003;&#x2004;&#x2006;&#x2006;&#x2009;{{ product.taste}}<br/>
-                          Nature:&#x2003;&#x2009;{{ product.tea_nature}}<br/>
-                          Weight:&#x2003;&#x2009;{{ product.weight}} g<br/>
-                          Price:&#x2003;&#x2003;&#x2009;<span class="product-price-wrapper"><span class="product-price-old">${{ product.original_price }}</span>&#x2003;
-                            <span style="color:#519f10; font-size: 20px;">${{ product.discounted_price }}</span></span></p>
-                          <p>
-                            Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                            feugiat vitae, ultricies eget, tempor sit amet.
-                          </p>
-                          <div class="product-quantity mt-3">
-                            <div class="cart-plus-minus">
-                              <input
-                                class="cart-plus-minus-box"
-                                type="text"
-                                name="qtybutton"
-                                value="01"
-                              />
-                            </div>
-                            <a class="button" type="button" href="{% url 'cart' %}">Add to cart</a>
-                          </div>
-                          {% if product.is_available%}
-                          <span><i class="fa fa-check"></i> In stock</span>
-                          {% else %}
-                          <span><i class="fa fa-check"></i> Not availabel in this moment</span>
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {% endfor %} {% endif %}
-            </div> {% endcomment %}
-
 
               <div class="pagination-total-pages">
                 <div class="pagination-style">
@@ -261,78 +172,6 @@
                 </div>
               </div>
               <div class="shop-price-filter mt-40 shop-sidebar-border pt-35">
-                <h4 class="shop-sidebar-title">Price Filter</h4>
-                <div class="price_filter mt-25">
-                  <span>Range: $100.00 - 1.300.00 </span>
-                  <div id="slider-range"></div>
-                  <div class="price_slider_amount">
-                    <div class="label-input">
-                      <input
-                        type="text"
-                        id="amount"
-                        name="price"
-                        placeholder="Add Your Price"
-                      />
-                    </div>
-                    <button type="button">Filter</button>
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                <h4 class="shop-sidebar-title">By Brand</h4>
-                <div class="sidebar-list-style mt-20">
-                  <ul>
-                    <li><input type="checkbox" /><a href="#">Green </a></li>
-                    <li><input type="checkbox" /><a href="#">Herbal </a></li>
-                    <li><input type="checkbox" /><a href="#">Loose </a></li>
-                    <li><input type="checkbox" /><a href="#">Mate </a></li>
-                    <li><input type="checkbox" /><a href="#">Organic </a></li>
-                    <li><input type="checkbox" /><a href="#">White </a></li>
-                    <li>
-                      <input type="checkbox" /><a href="#">Yellow Tea </a>
-                    </li>
-                    <li><input type="checkbox" /><a href="#">Puer Tea </a></li>
-                  </ul>
-                </div>
-              </div>-->
-              <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                <h4 class="shop-sidebar-title">By Color</h4>
-                <div class="sidebar-list-style mt-20">
-                  <ul>
-                    <li><input type="checkbox" /><a href="#">Black </a></li>
-                    <li><input type="checkbox" /><a href="#">Blue </a></li>
-                    <li><input type="checkbox" /><a href="#">Green </a></li>
-                    <li><input type="checkbox" /><a href="#">Grey </a></li>
-                    <li><input type="checkbox" /><a href="#">Red</a></li>
-                    <li><input type="checkbox" /><a href="#">White </a></li>
-                    <li><input type="checkbox" /><a href="#">Yellow </a></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- 
-              <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                <h4 class="shop-sidebar-title">Compare Products</h4>
-                <div class="compare-product">
-                  <p>You have no item to compare.</p>
-                  <div class="compare-product-btn">
-                    <span>Clear all </span>
-                    <a href="#">Compare <i class="fa fa-check"></i></a>
-                  </div>
-                </div>
-              </div> -->
-              <!-- <div class="shop-widget mt-40 shop-sidebar-border pt-35">
-                <h4 class="shop-sidebar-title">Popular Tags</h4>
-                <div class="shop-tags mt-25">
-                  <ul>
-                    <li><a href="#">Green</a></li>
-                    <li><a href="#">Oolong</a></li>
-                    <li><a href="#">Black</a></li>
-                    <li><a href="#">Pu'erh</a></li>
-                    <li><a href="#">Dark </a></li>
-                    <li><a href="#">Special</a></li>
-                  </ul>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
