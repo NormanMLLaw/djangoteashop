@@ -77,6 +77,9 @@ from django.template.loader import render_to_string
 def payments(request):
     return render(request, 'orders/payments.html')
 
+def thanks(request):
+    return render(request, 'orders/thanks.html')
+
 def place_order(request, total=0, quantity=0,):
     current_user = request.user
 
@@ -142,7 +145,7 @@ def order_complete(request):
     transID = request.GET.get('payment_id')
 
     try:
-        order = Order.objects.get(order_number=order_number, is_ordered=True)
+        order = Order.objects.get(ordxer_number=order_number, is_ordered=True)
         ordered_products = OrderProduct.objects.filter(order_id=order.id)
 
         subtotal = 0
