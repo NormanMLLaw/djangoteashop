@@ -12,16 +12,19 @@
     >
       <div class="container">
         <div class="slider-content slider-animated-1">
-          <h1 class="animated"><span class="theme-color">Peace of mind</span>
+          <h1 class="animated">
+            <span class="theme-color">Peace of mind</span>
           </h1>
-          <h1 class="animated">what a wonderful <br/>moment with <br/>a cup of tea!</h1>
+          <h1 class="animated">
+            what a wonderful <br />moment with <br />a cup of tea!
+          </h1>
           <p>
             Lorem ipsum dolor sit amet, consectetu adipisicing elit sedeiu
             tempor inci ut labore et dolore magna aliqua.
           </p>
         </div>
-      </div> <!-- # container -->
-    </div>  <!-- # slider-active -->
+      </div>
+    </div>
     <div
       class="single-slider ptb-240 bg-img"
       style="background-image: url(../static/img/slider/slider-1-1.jpg)"
@@ -31,18 +34,18 @@
           <h1 class="animated">
             <span class="theme-color">Peace of mind</span>
           </h1>
-          <h1 class="animated">what a wonderful <br/>moment with <br/>a cup of tea!</h1>
+          <h1 class="animated">
+            what a wonderful <br />moment with <br />a cup of tea!
+          </h1>
           <p>
             Lorem ipsum dolor sit amet, consectetu adipisicing elit sedeiu
             tempor inci ut labore et dolore magna aliqua.
           </p>
         </div>
-      </div> <!-- # container -->
-    </div> <!-- # single-slider -->
-  </div> <!-- # slider-active -->
-</div> <!-- # slider-area -->
-<!-- Slider End -->
-<!-- Product Area Start -->
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="product-area bg-image-1 pt-100 pb-95">
   <div class="container">
@@ -66,7 +69,7 @@
             >
               <i class="ion-ios-search-strong"></i>
             </a>
-          </div> <!-- # product-action -->
+          </div>
         </div>
 
         <div class="product-content text-left">
@@ -105,8 +108,8 @@
                 <img alt="" src="{% static 'img/icon-img/testi.png' %}" />
               </div>
               <p>
-                Django Tea Shop lorem ipsum dolor sit amet, consectetur adipisici elit, sed do
-                eiusmod tempor incididunt ut labore
+                Django Tea Shop lorem ipsum dolor sit amet, consectetur
+                adipisici elit, sed do eiusmod tempor incididunt ut labore
               </p>
               <h4>Gregory Perkins</h4>
               <h5>Customer</h5>
@@ -194,21 +197,15 @@
                 <p>
                   Pellentesque habitant morbi tristique senectus et netus et
                   malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                  feugiat vitae, ultricies eget, tempor sit amet.<br/><br/>
+                  feugiat vitae, ultricies eget, tempor sit amet.<br /><br />
                 </p>
-                <!-- <div class="product-quantity mt-20">
-                <div class="cart-plus-minus mt-20">
-                    <input
-                      class="cart-plus-minus-box"
-                      type="text"
-                      name="qtybutton"
-                      value="01"
-                    />
-                  </div>
-                </div>-->
                 {% if product.is_available%}
-                <a class="button ml-0 mt-10" type="button" href="{% url 'add_cart' product.id %}"
-                >Add to cart</a>
+                <a
+                  class="button ml-0 mt-10"
+                  type="button"
+                  href="{% url 'add_cart' product.id %}"
+                  >Add to cart</a
+                >
                 <span><i class="fa fa-check"></i> In stock</span>
                 {% else %}
                 <span
@@ -219,13 +216,17 @@
               </div>
             </div>
           </div>
+          <!-- # row --->
         </div>
+        <!-- # row --->
       </div>
+      <!-- # modal-content -->
     </div>
-    {% endfor %} {% endif %}
+    <!-- # modal-dialog -->
   </div>
+  <!-- #modal fade -->
+  {% endfor %} {% endif %}
 </div>
-</div>
-</div>
-</div>
+<!-- #product-area -->
+
 {% endblock %}
