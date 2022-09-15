@@ -4,7 +4,10 @@
 <!-- block content -->
 {% block content %}
 <!-- Breadcrumb Area Start -->
-<div class="breadcrumb-area ptb-150" style="background-image: url(../static/img/banner/banner.jpg)">
+<div
+  class="breadcrumb-area ptb-150"
+  style="background-image: url(../static/img/banner/banner.jpg)"
+>
   <div class="container">
     <div class="breadcrumb-content text-center mt-50">
       <h3>CART PAGE</h3>
@@ -22,7 +25,9 @@
     {% if not cart_items %}
     <div class="text-center mb-100">
       <h4 class="mb-20">Your shopping cart is empty</h4>
-      <a href="{% url 'shop' %}" type="button" class="button">&#x2004;Continue shopping&#x2004;</a>
+      <a href="{% url 'shop' %}" type="button" class="button"
+        >&#x2004;Continue shopping&#x2004;</a
+      >
     </div>
     {% else %}
     <h3 class="page-title">Your cart items</h3>
@@ -48,33 +53,60 @@
               {% for cart_item in cart_items %}
               <tr>
                 <td class="product-thumbnail">
-                  <a href="{{ cart_item.product.get_url }}"><img src="{{ cart_item.product.photo_1_t.url }}"
-                      alt="" /></a>
+                  <a href="{{ cart_item.product.get_url }}"
+                    ><img src="{{ cart_item.product.photo_1_t.url }}" alt=""
+                  /></a>
                 </td>
                 <td class="product-name">
-                  <a href="{{ cart_item.product.get_url }}">{{ cart_item.product.tea_name }}</a>
+                  <a href="{{ cart_item.product.get_url }}"
+                    >{{ cart_item.product.tea_name }}</a
+                  >
                 </td>
                 <td class="product-price-cart">
-                  <span class="amount">${{ cart_item.product.discounted_price }}</span>
+                  <span class="amount"
+                    >${{ cart_item.product.discounted_price }}</span
+                  >
                 </td>
                 <td class="product-quantity">
                   <!-- <div class="col"> -->
                   <div class="input-group input-spinner">
                     <div class="input-group-prepend">
-                      <a href="{% url 'remove_cart' cart_item.product.id cart_item.id %}" class="button btn-light"
-                        type="button" id="button-minus" style="background: #454545">
-                        <i class="fa fa-minus"></i></a>&#x2006;
+                      <a
+                        href="{% url 'remove_cart' cart_item.product.id cart_item.id %}"
+                        class="button btn-light"
+                        type="button"
+                        id="button-minus"
+                        style="background: #454545"
+                      >
+                        <i class="fa fa-minus"></i></a
+                      >&#x2006;
                     </div>
-                    <input type="text" class="form-control" value="{{cart_item.quantity}}" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="{{cart_item.quantity}}"
+                    />
                     <div class="input-group-append">
-                      <form class="btn" action="{% url 'add_cart' cart_item.product.id %}" method="POST">
+                      <form
+                        class="btn"
+                        action="{% url 'add_cart' cart_item.product.id %}"
+                        method="POST"
+                      >
                         {% csrf_token %}
                         <!-- -->
                         {% for item in cart_item.variations.all %}
-                        <input type="hidden" name="{{ item.variation_category | lower}}"
-                          value="{{ item.variation_value | capfirst }}" />
+                        <input
+                          type="hidden"
+                          name="{{ item.variation_category | lower}}"
+                          value="{{ item.variation_value | capfirst }}"
+                        />
                         {% endfor %}
-                        <button class="button btn-light" type="submit" id="button-plus" style="background: #454545">
+                        <button
+                          class="button btn-light"
+                          type="submit"
+                          id="button-plus"
+                          style="background: #454545"
+                        >
                           <i class="fa fa-plus"></i>
                         </button>
                       </form>
@@ -86,8 +118,12 @@
 
                 <td class="product-subtotal">${{ cart_item.sub_total }}</td>
                 <td class="product-remove">
-                  <a type="button" onclick="return confirm('Are you sure you want to delete this item?')"
-                    class="button btn-danger" href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}">
+                  <a
+                    type="button"
+                    onclick="return confirm('Are you sure you want to delete this item?')"
+                    class="button btn-danger"
+                    href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}"
+                  >
                     <!-- <i class="fa fa-times"></i> -->Delete
                   </a>
                 </td>
@@ -124,6 +160,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
   </div>
 </div>
-{% endif %} {% endblock %}
+{% endblock %}
